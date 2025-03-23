@@ -3,34 +3,32 @@ import LinkEl from "@/components/elements/LinkEl";
 
 export interface ThumbnailProps {
   id?: string;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
+  image: {
+    src: string;
+    alt: string;
+    width: number;
+    height: number;
+  };
   className: string;
   title: string;
   link: string;
 }
 const Thumbnail = ({
   id,
-  src,
-  alt,
-  width,
-  height,
+  image,
   className,
   title,
   link,
 }: ThumbnailProps) => {
   return (
-    <div className="relative" id={id}>
+    <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60" id={id}>
       <LinkEl href={link}>
         <ImageEl
-          src={src}
-          alt={alt}
-          width={width}
-          height={height}
+          src={image.src}
+          alt={image.alt}
+          width={image.width}
+          height={image.height}
           className={className}
-          fill={true}
         />
         <h3 className="text-white text-2xl font-bold">{title}</h3>
       </LinkEl>

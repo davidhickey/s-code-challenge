@@ -5,14 +5,14 @@ const ImageEl = ({
   width,
   height,
   className,
-  fill,
+  fill = false,
 }: {
   src: string;
   alt: string;
   width: number;
   height: number;
   className: string;
-  fill: boolean;
+  fill?: boolean;
 }) => {
   return (
     <Image
