@@ -17,6 +17,13 @@ export type CreateCommentInput = {
   user_id: string;
 };
 
+export type Comment = {
+  id: string;
+  content: string;
+  user_id: string;
+  created_at: string;
+};
+
 export type Video = {
   id: string;
   created_at: string;
