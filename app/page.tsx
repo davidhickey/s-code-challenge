@@ -8,14 +8,16 @@ const thumbnails = [
   {
     id: "1",
     title: "Thumbnail 1",
-    image: {
-      src: "/images/thumbnail-1.jpg",
-      alt: "Thumbnail 1",
-      width: 100,
-      height: 100,
-        },
+    video_url: "https://www.youtube.com/embed/ORvZoUu0pVs?si=6FKPiw3w3GLgVPrd",
     className: "w-full h-full",
     link: "/",
+    controls: false,
+    allowFullScreen: true,
+    internalSrc: false,
+    image_url: "",
+    width: 560,
+    height: 315,
+    alt: "",
   },
   {
     id: "2",

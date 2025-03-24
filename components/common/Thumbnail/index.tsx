@@ -1,36 +1,53 @@
 import ImageEl from "@/components/elements/ImageEl";
 import LinkEl from "@/components/elements/LinkEl";
+import VideoEl from "@/components/elements/VideoEl";
 
 export interface ThumbnailProps {
   id?: string;
-  image: {
-    src: string;
-    alt: string;
-    width: number;
-    height: number;
-  };
+  image_url?: string;
+  width?: number;
+  height?: number;
+  alt?: string;
+  video_url?: string;
   className: string;
   title: string;
   link: string;
+  internalSrc?: boolean;
+  allowFullScreen?: boolean;
+  controls?: boolean;
 }
 const Thumbnail = ({
   id,
-  image,
+  image_url,
+  width,
+  height,
+  alt,
   className,
   title,
   link,
+  video_url,
+  internalSrc,
+  allowFullScreen,
+  controls,
 }: ThumbnailProps) => {
   return (
-    <div className="flex h-full flex-1 flex-col gap-4 rounded-lg min-w-60" id={id}>
-      <LinkEl href={link}>
-        <ImageEl
-          src={image.src}
-          alt={image.alt}
-          width={image.width}
-          height={image.height}
-          className={className}
-        />
-        <h3 className="text-white text-2xl font-bold">{title}</h3>
+    <div className="flexmin-w-60 " id={id}>
+      <LinkEl href={link} className="w-full flex flex-col gap-4">
+        <div className="w-full aspect-video bg-cover rounded-xl flex flex-col overflow-hidden">
+            {(video_url && !image_url) &&
+              <VideoEl src={video_url} className={className} internalSrc={internalSrc} allowFullScreen={allowFullScreen} controls={controls} />
+            }
+          {(image_url && !video_url) &&
+            <ImageEl
+              src={image_url}
+              alt={alt || ""  }
+              width={width || 0}
+              height={height || 0}
+              className={className}
+            />
+          }
+          </div>
+          <h3 className="text-[#111518] text-base font-medium leading-normal">{title}</h3>
       </LinkEl>
     </div>
   );
