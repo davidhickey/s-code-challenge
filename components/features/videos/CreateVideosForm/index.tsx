@@ -14,6 +14,7 @@ const CreateVideosForm = () => {
     title: "",
   });
   const [error, setError] = useState<string | null>(null);
+  const [success, setSuccess] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,7 +28,13 @@ const CreateVideosForm = () => {
     }
     try {
       await mutation.mutateAsync(form);
-      alert("Video uploaded successfully!");
+      setSuccess("Video uploaded successfully!");
+      setForm({
+        user_id: "",
+        description: "",
+        video_url: "",
+        title: "",
+      });
     } catch (err) {
       console.error(err);
       setError("Failed to upload video. Please try again later.");
@@ -41,7 +48,7 @@ const CreateVideosForm = () => {
           <h3 className="text-[#0e141b] tracking-light text-2xl font-bold leading-tight px-4 text-center pb-2 pt-5">
             Create a Video
           </h3>
-          <form onSubmit={handleSubmit} onFocus={() => setError(null)} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
+          <form onSubmit={handleSubmit} onFocus={() => [setError(null), setSuccess('')]} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
             <div className="flex flex-col gap-2">
               <label htmlFor="user_id" className="text-sm text-[#0e141b]">
                 User ID
@@ -99,6 +106,7 @@ const CreateVideosForm = () => {
                 />
             </div>
             {error && <p className="text-red-500">{error}</p>}
+            {success && <p className="text-green-500">{success}</p>}
             <ButtonEl type="submit">Upload</ButtonEl>
           </form>
         </div>
