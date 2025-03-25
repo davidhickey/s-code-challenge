@@ -45,12 +45,12 @@ const CreateVideosForm = () => {
     <div className="layout-container flex h-full grow flex-col">
       <div className="flex flex-1 items-center justify-center py-5">
         <div className="layout-content-container flex flex-col items-center max-w-[512px] py-5 lg:max-w-[960px] flex-1">
-          <h3 className="text-[#0e141b] tracking-light text-2xl font-bold leading-tight px-4 text-center pb-2 pt-5">
+          <h3 className="tracking-light text-2xl font-bold leading-tight px-4 text-center pb-2 pt-5">
             Create a Video
           </h3>
           <form onSubmit={handleSubmit} onFocus={() => [setError(null), setSuccess('')]} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
             <div className="flex flex-col gap-2">
-              <label htmlFor="user_id" className="text-sm text-[#0e141b]">
+              <label htmlFor="user_id" className="text-sm">
                 User ID
               </label>
               <InputEl
@@ -63,7 +63,7 @@ const CreateVideosForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="title" className="text-sm text-[#0e141b]">
+              <label htmlFor="title" className="text-sm">
                 Title
               </label>
               <InputEl
@@ -76,7 +76,7 @@ const CreateVideosForm = () => {
                 />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="description" className="text-sm text-[#0e141b]">
+              <label htmlFor="description" className="text-sm">
                 Description
               </label>
               <InputEl
@@ -89,7 +89,7 @@ const CreateVideosForm = () => {
               />
             </div>
             <div className="flex flex-col gap-2">
-              <label htmlFor="video_url" className="text-sm text-[#0e141b]">
+              <label htmlFor="video_url" className="text-sm">
                 Video URL
               </label>
               <InputEl
