@@ -4,7 +4,7 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 
 It is a simple video platform that allows users to upload videos, watch them, and comment on them.
 
-Check it out here - https://s-code-challenge-phi.vercel.app/ but please be aware that a CORS violation is preventing video and comment submission. I think this is because api POST requests are no longer coming from localhost:3000.
+Check it out here - https://s-code-challenge-phi.vercel.app/ but please be aware that a CORS violation is preventing video and comment submission currently.
 
 ## Tech Stack
 
