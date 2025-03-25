@@ -5,7 +5,6 @@ import useCreateComment from "@/hooks/useCreateComment";
 import InputEl from "@/components/elements/InputEl";
 import ButtonEl from "@/components/elements/ButtonEl";
 const CreateCommentForm = ({ video_id }: { video_id: string }) => {
-  console.log('video id is ', video_id);
   const mutation = useCreateComment();
   const [form, setForm] = useState<CreateCommentInput>({
     video_id: video_id,
@@ -25,11 +24,10 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
       await mutation.mutateAsync(form);
       setSuccess("Comment created successfully!");
       setForm({
-        video_id: "",
+        video_id: video_id,
         user_id: "",
         content: "",
       });
-      
     } catch (err) {
       console.error(err);
       setError("Failed to create comment. Please try again later.");
@@ -39,7 +37,7 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
 
   return (
     <div className="flex flex-col gap-2 py-8">
-      <h2 className="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4">Add a Comment</h2>
+      <h2 className="text-[22px] font-bold leading-tight tracking-[-0.015em] px-4">Add a Comment</h2>
       <form onSubmit={handleSubmit} onFocus={() => [setError(null), setSuccess('')]} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
       <InputEl
         id="user_id"

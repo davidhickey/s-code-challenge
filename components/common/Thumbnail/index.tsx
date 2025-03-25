@@ -31,7 +31,7 @@ const Thumbnail = ({
   controls,
 }: ThumbnailProps) => {
   return (
-    <div className="flex min-w-60" id={id}>
+    <div className="flex min-w-60 max-w-[300px]" id={id}>
       <LinkEl href={link} className="w-full flex flex-col gap-4">
         <div className="w-full aspect-video bg-cover rounded-xl flex flex-col overflow-hidden pointer-events-none">
             {(video_url && !image_url) &&
@@ -47,7 +47,7 @@ const Thumbnail = ({
             />
           }
           </div>
-          <h3 className="text-[#111518] text-base font-medium leading-normal">{title}</h3>
+          <h3 className="text-base font-medium leading-normal">{title}</h3>
       </LinkEl>
     </div>
   );
