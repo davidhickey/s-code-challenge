@@ -17,6 +17,12 @@ Check it out here - https://s-code-challenge-phi.vercel.app/ but please be aware
 - Node.js
 - Vercel
 
+## User Testing
+1. User can view all videos on the home page.
+2. User can watch a video at /watch/3HFR2MykfnsHlDDb8hvx.
+3. User can submit new video at /create.
+4. User can submit new comment at /watch/3HFR2MykfnsHlDDb8hvx.
+
 ## Possible Next Steps
 functionality
 - env for api endpoints and user id
