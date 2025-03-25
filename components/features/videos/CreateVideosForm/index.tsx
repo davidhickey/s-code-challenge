@@ -58,10 +58,22 @@ const CreateVideosForm = () => {
                 name="user_id"
                 value={form.user_id}
                 onChange={handleChange}
-                className=""
                 id="user_id"
                 placeholder="User ID"
               />
+            </div>
+            <div className="flex flex-col gap-2">
+              <label htmlFor="title" className="text-sm text-[#0e141b]">
+                Title
+              </label>
+              <InputEl
+                type="text"
+                name="title"
+                value={form.title}
+                onChange={handleChange}
+                id="title"
+                placeholder="Title"
+                />
             </div>
             <div className="flex flex-col gap-2">
               <label htmlFor="description" className="text-sm text-[#0e141b]">
@@ -72,7 +84,6 @@ const CreateVideosForm = () => {
                 name="description"
                 value={form.description}
                 onChange={handleChange}
-                className=""
                 id="description"
                 placeholder="Description"
               />
@@ -86,24 +97,9 @@ const CreateVideosForm = () => {
                 name="video_url"
                 value={form.video_url}
                 onChange={handleChange}
-                className=""
                 id="video_url"
                 placeholder="Video URL"
               />
-            </div>
-            <div className="flex flex-col gap-2">
-              <label htmlFor="title" className="text-sm text-[#0e141b]">
-                Title
-              </label>
-              <InputEl
-                type="text"
-                name="title"
-                value={form.title}
-                onChange={handleChange}
-                className=""
-                id="title"
-                placeholder="Title"
-                />
             </div>
             {error && <p className="text-red-500">{error}</p>}
             {success && <p className="text-green-500">{success}</p>}

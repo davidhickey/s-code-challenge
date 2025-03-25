@@ -31,9 +31,9 @@ const Thumbnail = ({
   controls,
 }: ThumbnailProps) => {
   return (
-    <div className="flexmin-w-60 " id={id}>
+    <div className="flex min-w-60" id={id}>
       <LinkEl href={link} className="w-full flex flex-col gap-4">
-        <div className="w-full aspect-video bg-cover rounded-xl flex flex-col overflow-hidden">
+        <div className="w-full aspect-video bg-cover rounded-xl flex flex-col overflow-hidden pointer-events-none">
             {(video_url && !image_url) &&
               <VideoEl src={video_url} className={className} internalSrc={internalSrc} allowFullScreen={allowFullScreen} controls={controls} />
             }

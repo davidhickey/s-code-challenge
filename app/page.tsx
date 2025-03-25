@@ -12,6 +12,10 @@ const Home: NextPage = async () => {
     <div className="home-page-container">
       <Hero />
       {transformedVideos.length > 0 && <ThumbnailsGroup thumbnails={transformedVideos} title="Guitar Lessons" />}
+
+      {transformedVideos.length > 0 && <ThumbnailsGroup thumbnails={transformedVideos} title="Alt Guitar Lessons" />}
+
+      {transformedVideos.length > 0 && <ThumbnailsGroup thumbnails={transformedVideos} title="Metal Guitar Lessons" />}
     </div>
   );
 };

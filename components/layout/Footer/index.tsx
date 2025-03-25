@@ -26,12 +26,6 @@ const Footer = () => {
               className="text-[#637788] text-base font-normal leading-normal min-w-40"
               href="#"
             >
-              Help Center
-            </a>
-            <a
-              className="text-[#637788] text-base font-normal leading-normal min-w-40"
-              href="#"
-            >
               Privacy Policy
             </a>
             <a

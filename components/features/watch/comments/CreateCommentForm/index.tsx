@@ -29,6 +29,7 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
         user_id: "",
         content: "",
       });
+      
     } catch (err) {
       console.error(err);
       setError("Failed to create comment. Please try again later.");
@@ -37,10 +38,11 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
 
 
   return (
-    <form onSubmit={handleSubmit} onFocus={() => [setError(null), setSuccess('')]} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
+    <div className="flex flex-col gap-2 py-8">
+      <h2 className="text-[#111518] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4">Add a Comment</h2>
+      <form onSubmit={handleSubmit} onFocus={() => [setError(null), setSuccess('')]} className="flex max-w-[480px] flex-col items-start gap-4 px-4 py-3">
       <InputEl
         id="user_id"
-        className="w-full"
         type="text"
         name="user_id"
         placeholder="User ID"
@@ -49,7 +51,6 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
       />
       <InputEl
         id="content"
-        className="w-full"
         type="text"
         name="content"
         placeholder="Comment"
@@ -59,7 +60,8 @@ const CreateCommentForm = ({ video_id }: { video_id: string }) => {
       {error && <p className="text-red-500">{error}</p>}
       {success && <p className="text-green-500">{success}</p>}
       <ButtonEl type="submit">Create Comment</ButtonEl>
-    </form>
+      </form>
+    </div>
   );
 };
 
